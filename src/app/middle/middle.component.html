@@ -1,0 +1,86 @@
+<!-- table loop start -->
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-4">
+      <div class="table-responsive-md">
+        <table class="table table-bordered">
+          <tr *ngFor="let item of items;index as i">
+            <td>{{i+1}}</td>
+            <td>{{item}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <!-- input to add -->
+      <input class="form-control" type="date" [(ngModel)]="value">
+
+      <!-- button to push input in array items -->
+      <button class="btn btn-primary w-30" (click)="add(value)" [disabled]="items.length==5">Add</button>
+
+      <!-- button to pop input array-->
+      <button class="btn btn-warning w-30" (click)="remove()">Remove</button>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+   <div class="row">
+   
+    <div class="col-sm-2">
+    <a class="dropdown-item" href="#">Open/Closed</a>
+    <div class="btn-group">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Open And Closed
+      </button>
+    </div>
+  </div>
+
+
+
+  <div class="col-sm-2">
+      <a class="dropdown-item" href="#">From Date</a>
+      <input class="form-control" type="date" [(ngModel)]="value" text="From date">
+    </div>
+  
+    
+    <div class="col-md-2">
+        <a class="dropdown-item" href="#">To Date</a>
+      <input class="form-control" type="date" [(ngModel)]="value" text="To date">
+    </div>
+  
+    <button class="btn btn-primary w-20" (click)="remove()">FILTER</button>
+  </div>
+  </div>
+  
+  <div class="btn-group dropup">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       10
+      </button> 
+      <a class="dropdown-item" href="#">Items per page</a>
+      </div>
+
+  <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+
+          <tr>
+
+            <th># 
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      
+                    </button>
+                  </div>
+            </th>
+            <th>Date <i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th>Closed <i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th>Status  <i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th>Service issues <i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th>Description <i class="fa fa-filter" aria-hidden="true"></i></th>
+            </tr>
+          
+              </thead>
+              </table>
+              </div>
